@@ -1,0 +1,36 @@
+package newpackage;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestTryIt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\ant902879\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe");
+		
+		   WebDriver    driver = new ChromeDriver();
+			  //Opening google.com
+			driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_submit_get");
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	
+			
+	List<WebElement>	frames=	driver.findElements(By.tagName("iframe"));//to get all the iframes on the page
+	//when using list, use findElements and not findElement
+	System.out.println(frames.size());// total number of frames
+	for(WebElement frame: frames) {
+		System.out.println(frame.getAttribute("id"));
+		
+	//initially the below 2 steps were written before the above 5 lines. then no error in console but count=0
+		driver.switchTo().frame("iframeResult");  // after inspecting "on click" function, go up a few lines
+		driver.findElement(By.xpath("/html/body/button")).click();//try it button// use iframe or it will not click
+	}
+				
+	}
+}

@@ -1,0 +1,20 @@
+package newpackage;
+
+import java.util.Scanner;
+class BreakWhileLoop {
+  public static void main(String[] args) {
+    int n;
+   
+    Scanner input = new Scanner(System.in);
+   
+    while (true) { // Condition in while loop is always true here
+      System.out.println("Input an integer");
+      n = input.nextInt();
+     
+      if (n == 0) {
+        break;
+      }
+      System.out.println("You entered " + n);
+    }
+  }
+}
