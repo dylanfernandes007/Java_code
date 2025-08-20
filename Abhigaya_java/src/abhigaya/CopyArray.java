@@ -3,7 +3,7 @@ package abhigaya;
 public class CopyArray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub2
       
 		
 		int[] arr1= new int[] {22,32,3,4,5};
