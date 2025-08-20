@@ -6,7 +6,7 @@ public class CopyArray {
 		// TODO Auto-generated method stub2
       
 		
-		int[] arr1= new int[] {22,32,3,4,5};
+		int[] arr1= new int[] {22,32,3,4,5, 6};
 		int[] arr2= new int[arr1.length];
 		
 		for(int i=0;i<arr1.length;i++)
